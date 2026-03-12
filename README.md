@@ -21,12 +21,8 @@ The AIs are initially trained to learn the basics of the board game and as soon 
   └── ChessApiServer  REST API (port 8080)       
 
                 HTTP / JSON
-          ┌──────────┴──────────┐
-          │                     │
-   ┌──────▼──────┐       ┌──────▼──────┐
-     white_ai.py           black_ai.py 
-     RandomAgent           GreedyAgent 
-   └─────────────┘       └─────────────┘
+ white_ai.py           black_ai.py 
+RandomAgent           GreedyAgent 
 
 
 
