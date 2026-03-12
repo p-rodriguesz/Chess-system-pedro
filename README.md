@@ -46,13 +46,13 @@ An example response for /state
   "legalMoves": ["e7e5", "e7e6", "d7d5", "..."]
 }
 
-*QUICK START*
+#QUICK START
 
 *1. Build & run the Java Engine:*
 
 mvn package -q
 java -jar target/chess-ai-system-1.0.0.jar
-# Server starts on http://localhost:8080
+Server starts on http://localhost:8080
 
 *2. Install Python Dependencies*
 
@@ -65,9 +65,9 @@ cd python-ai/agents
 python orchestrator.py
 
 *3b. Run AI's in separate terminals*
-# Terminal 2
+Terminal 2
 python python-ai/agents/white_ai.py
-# Terminal 3 
+ Terminal 3 
 python python-ai/agents/black_ai.py
 
 *Implementing your own AI:*
@@ -94,38 +94,44 @@ mvn test in cmd/bash/powershell
 chess-ai-system/
 ├── pom.xml
 ├── src/
-│   ├── main/java/com/chess/
-│   │   ├── Main.java
-│   │   ├── model/
-│   │   │   ├── Board.java
-│   │   │   ├── Color.java
-│   │   │   ├── GameStatus.java
-│   │   │   ├── Move.java
-│   │   │   ├── MoveType.java
-│   │   │   ├── PieceType.java
-│   │   │   ├── Position.java
-│   │   │   └── pieces/
-│   │   │       ├── Piece.java       ← abstract base
-│   │   │       ├── King.java
-│   │   │       ├── Pawn.java
-│   │   │       └── SlidingPieces.java  (Queen, Rook, Bishop, Knight)
-│   │   ├── engine/
-│   │   │   ├── GameEngine.java
-│   │   │   ├── MoveValidator.java
-│   │   │   ├── FenSerializer.java
-│   │   │   ├── PieceFactory.java
-│   │   │   └── IllegalMoveException.java
-│   │   └── server/
-│   │       └── ChessApiServer.java
-│   └── test/java/com/chess/
-│       └── GameEngineTest.java
 └── python-ai/
-    ├── requirements.txt
-    └── agents/
-        ├── base_agent.py     ← abstract base, all HTTP logic here
-        ├── white_ai.py       ← Random agent
-        ├── black_ai.py       ← Greedy capture agent
-        └── orchestrator.py   ← runs both AIs in one process
+
+src/
+└── main/java/com/chess/
+
+Main.java
+model/
+├── Board.java
+├── Color.java
+├── GameStatus.java
+├── Move.java
+├── MoveType.java
+├── PieceType.java
+├── Position.java
+└── pieces/
+├── Piece.java          ← abstract base
+├── King.java
+├── Pawn.java
+└── SlidingPieces.java  (Queen, Rook, Bishop, Knight)
+engine/
+├── GameEngine.java
+├── MoveValidator.java
+├── FenSerializer.java
+├── PieceFactory.java
+└── IllegalMoveException.java
+server/
+└── ChessApiServer.java
+src/test/java/com/chess/
+└── GameEngineTest.java
+python-ai/
+├── requirements.txt
+└── agents/
+agents/
+├── base_agent.py      ← abstract base, all HTTP logic here
+├── white_ai.py        ← Random agent
+├── black_ai.py        ← Greedy capture agent
+└── orchestrator.py    ← runs both AIs
+
 
         
 
